@@ -8,10 +8,9 @@ class CounterCubit extends Cubit<CounterState> {
   int _counter = 0;
   CounterCubit() : super(CounterState());
 
-
-
   void increment() {
     _counter++;
+    // int counter = state.counter;
     emit(CounterState(counter: _counter));
   }
 

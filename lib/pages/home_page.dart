@@ -13,7 +13,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("You have pressed 0 times")),
+      body: BlocBuilder<CounterCubit, CounterState>(
+        builder: (context, state) {
+          return Center(child: Text("You have pressed ${state.counter} times"));
+        },
+      ),
 
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
